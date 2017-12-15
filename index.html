@@ -30,21 +30,30 @@
     }
 
     .div1 {
+        background-color: -webkit-var(--0);
         background-color: var(--0);
+        color: -webkit-var(--红色);
         color: var(--红色);
     }
 
     .div2 {
+        background-color: -webkit-var(--0);
         background-color: var(--0);
+        color: -webkit-var(--绿色, #0f0);
         color: var(--绿色, #0f0);
     }
 
+    .input1 {width: -webkit-var(--size-bg); }
     .input1 {width: var(--size-bg); }
+    .input2 {width: -webkit-var(--size-sm)px; }
     .input2 {width: var(--size-sm)px; }
+    .input3 {width: calc(-webkit-var(--size-sm) * 1px); }
     .input3 {width: calc(var(--size-sm) * 1px); }
     .box {
         --columns: 4;
+        --margins: calc(24px / -webkit-var(--columns));
         --margins: calc(24px / var(--columns));
+        --fontSize: calc(16px - 4 / -webkit-var(--columns));
         --fontSize: calc(16px - 4 / var(--columns));
     }
     @media screen and (max-width: 1200px) {
@@ -64,11 +73,14 @@
     }
     .box .item {
 	    float: left;
+        width: calc((100% - -webkit-var(--margins) * -webkit-var(--columns) * 2) / -webkit-var(--columns));
     	width: calc((100% - var(--margins) * var(--columns) * 2) / var(--columns));
+        margin: -webkit-var(--margins);
 	    margin: var(--margins);
 	    box-shadow: 0 2px 2px 0 rgba(0,0,0,.14), 0 3px 1px -2px rgba(0,0,0,.2), 0 1px 5px 0 rgba(0,0,0,.12);
 	    background-color: #f0f3f9;
 	    height: 200px;
+        font-size: -webkit-var(--fontSize);
 	    font-size: var(--fontSize);
 	    color: #000;	
     }
