@@ -118,9 +118,9 @@
 	                <h2>大小</h2>
 	                <pre><code data-trim contenteditable>
 					:root{--size-bg: 400px; --size-sm:100;}
-					.input1 {width: var(--size-bg); }
-					.input2 {width: var(--size-sm)px; }
-					.input3 {width: calc(var(--size-sm) * 1px); }
+					.input1 {width: var(--size-bg); } √
+					.input2 {width: var(--size-sm)px; } ×
+					.input3 {width: calc(var(--size-sm) * 1px); } √
 					</code></pre>
 	                <div> &lt;input class="input1"/&gt;</div>
 	                <input class="input1" placeholder="宽度400px">
@@ -173,11 +173,20 @@
     // - https://github.com/hakimel/reveal.js#configuration
     // - https://github.com/hakimel/reveal.js#dependencies
     Reveal.initialize({
+    	controls: true,
+    	progress: true,
+    	history: true,
+    	center: true,
+
+    	transition: 'slide', // none/fade/slide/convex/concave/zoom
         dependencies: [
-            { src: 'plugin/markdown/marked.js' },
-            { src: 'plugin/markdown/markdown.js' },
-            { src: 'plugin/notes/notes.js', async: true },
-            { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+            { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+			{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+			{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+			{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+			{ src: 'plugin/search/search.js', async: true },
+			{ src: 'plugin/zoom-js/zoom.js', async: true },
+			{ src: 'plugin/notes/notes.js', async: true }
         ]
     });
     </script>
